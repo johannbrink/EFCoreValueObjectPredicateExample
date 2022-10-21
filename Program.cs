@@ -21,6 +21,8 @@ Console.WriteLine("Updating the blog and adding a post");
 blog.Url = "https://devblogs.microsoft.com/dotnet";
 blog.Posts.Add(
     new Post { Title = "Hello World", Content = "I wrote an app using EF Core!", Status = Status.Active });
+blog.Posts.Add(
+    new Post { Title = "2nd post", Content = "Lets see if this works!", Status = Status.Active });//THIS BREAKS! with the following exception:  SQLite Error 19: 'NOT NULL constraint failed: Posts.Status'.
 db.SaveChanges();
 
 // Query using primitive type
@@ -30,8 +32,7 @@ var posts1 = db.Posts
 
 // Query using Value Object
 Console.WriteLine("THIS BREAKS! Querying for a post (Using Value Object)");
-var posts2 = db.Posts
-    .Where(p => p.Status.Equals(Status.Active)).ToList();
+var posts2 = db.Posts.Where(p => p.Status.Equals(Status.Active)).ToList();
 
 // Delete
 Console.WriteLine("Delete the blog");

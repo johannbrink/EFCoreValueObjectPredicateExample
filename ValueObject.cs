@@ -4,7 +4,7 @@ using System.Text;
 namespace EFCoreValueObjectPredicateExample;
 
 [Serializable]
-public abstract class ValueObject : IComparable, IComparable<ValueObject>
+public abstract class ValueObject : IComparable<ValueObject>
 {
     private int? _cachedHashCode;
 
