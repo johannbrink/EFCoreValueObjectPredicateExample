@@ -23,12 +23,12 @@ blog.Posts.Add(
     new Post { Title = "Hello World", Content = "I wrote an app using EF Core!", Status = Status.Active });
 db.SaveChanges();
 
-// Query Using deep comparison
-Console.WriteLine("This works: Querying for a post (Using deep comparison)");
+// Query using primitive type
+Console.WriteLine("This works: Querying for a post (Using primitive type)");
 var posts1 = db.Posts
     .Where(p => p.Status.Name.Equals(Status.Active.Name)).ToList();
 
-// Query Using Value Object
+// Query using Value Object
 Console.WriteLine("THIS BREAKS! Querying for a post (Using Value Object)");
 var posts2 = db.Posts
     .Where(p => p.Status.Equals(Status.Active)).ToList();
