@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace EFCoreEnumerationPredicateExample.Migrations
+namespace EFCoreValueObjectPredicateExample.Migrations
 {
     public partial class InitialCreate : Migration
     {

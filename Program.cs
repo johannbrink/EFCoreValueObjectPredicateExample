@@ -1,4 +1,4 @@
-﻿using EFCoreEnumerationPredicateExample;
+﻿using EFCoreValueObjectPredicateExample;
 
 using var db = new BloggingContext();
 

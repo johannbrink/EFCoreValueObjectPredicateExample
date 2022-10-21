@@ -1,4 +1,4 @@
-﻿namespace EFCoreEnumerationPredicateExample;
+﻿namespace EFCoreValueObjectPredicateExample;
 
 public class Status : ValueObject
 {

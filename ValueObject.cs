@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace EFCoreEnumerationPredicateExample;
+namespace EFCoreValueObjectPredicateExample;
 
 [Serializable]
 public abstract class ValueObject : IComparable, IComparable<ValueObject>
