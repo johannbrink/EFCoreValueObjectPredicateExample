@@ -48,6 +48,6 @@ Unhandled exception. System.InvalidOperationException: No backing field could be
    at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetEnumerator()
    at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Program.<Main>$(String[] args) in /Users/johann/source/sandbox/EFCoreEnumerationPredicateExample/Program.cs:line 33
+   at Program.<Main>$(String[] args) in /Users/johann/source/sandbox/EFCoreValueObjectPredicateExample/Program.cs:line 33
 
 ```
