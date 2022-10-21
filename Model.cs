@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFCoreEnumerationPredicateExample;
 
@@ -20,6 +21,18 @@ public class BloggingContext : DbContext
     // special "local" folder for your platform.
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source={DbPath}");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        => modelBuilder.ApplyConfiguration(new PostConfiguration());
+}
+
+public class PostConfiguration: IEntityTypeConfiguration<Post>
+{
+    public void Configure(EntityTypeBuilder<Post> builder)
+    {
+        var statusBuilder = builder.OwnsOne(x => x.Status);
+        statusBuilder.Property(x => x.Name).HasColumnName("Status").HasColumnType("varchar").HasMaxLength(20).IsRequired();
+    }
 }
 
 public class Blog
