@@ -11,7 +11,7 @@ dotnet run
 Inserting a new blog
 Querying for a blog
 Updating the blog and adding a post
-This works: Querying for a post (Using deep comparison)
+This works: Querying for a post (Using primitive type)
 THIS BREAKS! Querying for a post (Using Value Object)
 Unhandled exception. System.InvalidOperationException: No backing field could be found for property 'Status.PostId' and the property does not have a getter.
    at Microsoft.EntityFrameworkCore.Metadata.IPropertyBase.GetMemberInfo(Boolean forMaterialization, Boolean forSet)
