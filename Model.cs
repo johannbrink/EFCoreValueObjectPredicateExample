@@ -1,8 +1,6 @@
-namespace EFCoreEnumerationPredicateExample;
-
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+
+namespace EFCoreEnumerationPredicateExample;
 
 public class BloggingContext : DbContext
 {
@@ -40,4 +38,5 @@ public class Post
 
     public int BlogId { get; set; }
     public Blog Blog { get; set; }
+    public Status Status { get; set; }
 }

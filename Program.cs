@@ -23,6 +23,11 @@ blog.Posts.Add(
     new Post { Title = "Hello World", Content = "I wrote an app using EF Core!" });
 db.SaveChanges();
 
+// Query Value Object
+Console.WriteLine("Querying for a post (Using Value Object)");
+var posts = db.Posts
+    .Where(p => p.Status.Equals(Status.Active));
+
 // Delete
 Console.WriteLine("Delete the blog");
 db.Remove(blog);
